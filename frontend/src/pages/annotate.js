@@ -305,6 +305,7 @@ class Annotate extends React.Component {
         RegionsPlugin.create(),
         TimelinePlugin.create({ container: "#timeline" }),
       ],
+      xhr: {requestHeaders:[{key: 'Authorization', value: localStorage.getItem("access_token")}]},
     });
     this.showSegmentTranscription(null);
     this.props.history.listen((location, action) => {

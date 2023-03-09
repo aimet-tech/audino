@@ -5,12 +5,12 @@ import uuid
 from pathlib import Path
 
 from flask import jsonify, flash, redirect, url_for, request, send_from_directory
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_raw_jwt
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import BadRequest, NotFound, InternalServerError
 
-from backend import app, db
+from backend import app, db, redis_client
 from backend.models import Data, Project, User, Segmentation, Label, LabelValue
 
 from . import api
@@ -21,6 +21,10 @@ ALLOWED_EXTENSIONS = ["wav", "mp3", "ogg"]
 @api.route("/audio/<path:file_name>", methods=["GET"])
 @jwt_required
 def send_audio_file(file_name):
+    jti = get_raw_jwt()["jti"]
+    entry = redis_client.get(jti)
+    if entry is None:
+        return jsonify(message="Unauthorized access!"), 401
     return send_from_directory(app.config["UPLOAD_FOLDER"], file_name)
 
 
