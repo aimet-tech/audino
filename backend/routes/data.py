@@ -5,6 +5,7 @@ import uuid
 from pathlib import Path
 
 from flask import jsonify, flash, redirect, url_for, request, send_from_directory
+from flask_cors import CORS 
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_raw_jwt
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
@@ -15,6 +16,8 @@ from backend.models import Data, Project, User, Segmentation, Label, LabelValue
 
 from . import api
 
+# Enable CORS for the entire app
+CORS(app, resources={r"/*": {"origins": "http://audino-alb-prod-1215862704.ap-southeast-1.elb.amazonaws.com"}})
 ALLOWED_EXTENSIONS = ["wav", "mp3", "ogg"]
 
 
