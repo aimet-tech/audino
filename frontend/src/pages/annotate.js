@@ -857,7 +857,7 @@ class Annotate extends React.Component {
                     />
                   </div>
                 </div>
-                <div className="row justify-content-center">
+                {/* <div className="row justify-content-center">
                   <div className="col-1">
                     <FontAwesomeIcon icon={faSearchMinus} title="Zoom out" />
                   </div>
@@ -873,7 +873,7 @@ class Annotate extends React.Component {
                   <div className="col-1">
                     <FontAwesomeIcon icon={faSearchPlus} title="Zoom in" />
                   </div>
-                </div>
+                </div> */}
                 <div className="row justify-content-center my-4">
                   {referenceTranscription ? (
                     <div className="form-group">
@@ -895,7 +895,7 @@ class Annotate extends React.Component {
                     <div className="row justify-content-center my-4">
                       <div className="form-group">
                         <label className="font-weight-bold">
-                          Segment Transcription
+                          Transcription
                         </label>
                         <textarea
                           className="form-control"
@@ -960,14 +960,14 @@ class Annotate extends React.Component {
                     </div>
                     <div className="row justify-content-center my-8">
                       <div className="col-2">
-                        <Button
+                        {/* <Button
                           size="lg"
                           type="danger"
                           disabled={isSegmentDeleting}
                           isSubmitting={isSegmentDeleting}
                           onClick={(e) => this.handleSegmentDelete(e)}
                           text="Delete"
-                        />
+                        /> */}
                       </div>
                       <div className="col-2">
                         {/* <a href={`/projects/${this.state.projectId}/data`}>
@@ -987,7 +987,7 @@ class Annotate extends React.Component {
                             <Button size="lg" type="primary" text="Back" />
                           </a>
                         ) : (
-                          <Button size="lg" type="danger" text="START" isDisabled={true} />
+                          // <Button size="lg" type="danger" text="START" isDisabled={true} />
                         )}
                       </div>
                       <div className="col-2">
@@ -1000,7 +1000,7 @@ class Annotate extends React.Component {
                           text="Save"
                         />
                       </div>
-                      <div className="col-2">
+                      {/* <div className="col-2">
                         {!isSegmentSaving && nextItemAvailable ? (
                           <a
                             href={`/projects/${
@@ -1012,10 +1012,10 @@ class Annotate extends React.Component {
                         ) : (
                           <Button size="lg" type="danger" text="END" isDisabled={true} />
                         )}
-                      </div>
-                      <div className="col-2">
+                      </div> */}
+                      {/* <div className="col-2">
                         <Button size="lg" type="danger" text="Skip" isDisabled={isSegmentSaving} onClick={(e) => this.handleSkipFile(e)} />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ) : null}
@@ -1041,7 +1041,7 @@ class Annotate extends React.Component {
             ) : null}
             {this.state.youtubeId ? (
               <div className="video-responsive">
-                <iframe
+                {/* <iframe
                   width="853"
                   height="480"
                   src={`https://www.youtube.com/embed/${this.state.youtubeId}?start=${this.state.youtubeStartTime}`}
@@ -1049,7 +1049,7 @@ class Annotate extends React.Component {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   title="Reference Video"
-                />
+                /> */}
               </div>
             ) : null}
           </div>
