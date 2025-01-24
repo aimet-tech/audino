@@ -969,15 +969,15 @@ class Annotate extends React.Component {
                           text="Delete"
                         /> */}
                       </div>
-                      <div className="col-2">
-                        {/* <a href={`/projects/${this.state.projectId}/data`}>
+                      {/* <div className="col-2">
+                        <a href={`/projects/${this.state.projectId}/data`}>
                           <Button
                             size="lg"
                             type="primary"
                             disabled={isSegmentSaving}
                             text="Back to files"
                           />
-                        </a> */}
+                        </a>
                         {!isSegmentSaving && previousItemAvailable ? (
                           <a
                             href={`/projects/${
@@ -987,9 +987,9 @@ class Annotate extends React.Component {
                             <Button size="lg" type="primary" text="Back" />
                           </a>
                         ) : (
-                          // <Button size="lg" type="danger" text="START" isDisabled={true} />
+                          <Button size="lg" type="danger" text="START" isDisabled={true} />
                         )}
-                      </div>
+                      </div> */}
                       <div className="col-2">
                         <Button
                           size="lg"
